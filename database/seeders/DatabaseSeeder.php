@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $user = User::factory()->create();
-        Course::factory(5)->create(['user_id' => $user->id])->each(function ($course){
-            Episode::factory(rand(6,20))->make()->each(function ($episode,$key) use($course){
+        Course::factory(5)->create(['user_id' => $user->id])->each(function ($course) {
+            Episode::factory(rand(6, 20))->make()->each(function ($episode, $key) use ($course) {
                 $episode->number = $key + 1;
                 $course->episodes()->save($episode);
             });
