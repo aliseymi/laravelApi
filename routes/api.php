@@ -28,6 +28,9 @@ Route::prefix('v1')->namespace('Api\v1')->group(function (){
         });
 
         Route::post('/comment','CommentController@store');
+
+        Route::post('upload/image','UploadController@image');
+        Route::post('upload/file','UploadController@file');
     });
 });
 
