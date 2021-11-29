@@ -43,10 +43,10 @@ class CourseController extends Controller
 //            ],422);
 //        }
 
-//        $this->validate($request,[
-//            'title' => 'required|unique:courses|max:255',
-//            'body' => 'required'
-//        ]);
+        $this->validate($request,[
+            'title' => 'required|unique:courses|max:255',
+            'body' => 'required'
+        ]);
 
 //        $request->validate([
 //            'title' => 'required|unique:courses|max:255',

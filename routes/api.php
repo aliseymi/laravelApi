@@ -34,6 +34,11 @@ Route::prefix('v1')->namespace('Api\v1')->group(function (){
     });
 });
 
+Route::prefix('v2')->namespace('Api\v2')->group(function (){
+    Route::get('/courses','CourseController@index');
+    Route::get('/courses/{course}','CourseController@single');
+});
+
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
