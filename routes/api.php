@@ -37,6 +37,11 @@ Route::prefix('v1')->namespace('Api\v1')->group(function (){
 Route::prefix('v2')->namespace('Api\v2')->group(function (){
     Route::get('/courses','CourseController@index');
     Route::get('/courses/{course}','CourseController@single');
+
+    Route::middleware('auth:api')->group(function (){
+        Route::post('/courses/buy/{course}','BuyController@buy');
+        Route::get('courses/buy/callback','BuyController@callback');
+    });
 });
 
 //Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
